@@ -11,7 +11,7 @@ app.get('/apps', (req, res) => {
   console.log(req.query)
   if(sort) {
     if(!['Rating', 'App'].includes(sort)) {
-      return res.status(400).send('Sort must be one of Action, Puzzle, Strategy, Casual, Arcade, or Card')
+      return res.status(400).send('Sort must be one of Rating or App')
     }
   }
   let results = apps.filter(app => app.Genres.toLowerCase().includes(genres.toLowerCase()))
